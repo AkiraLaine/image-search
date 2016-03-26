@@ -21,7 +21,8 @@ app.get('/search/:search', function(req, res) {
           result.push(meta)
         });
       }
-      res.send(result);
+      if(result.length === 0) res.send('end of line');
+      else res.send(result);
     });
 });
 
